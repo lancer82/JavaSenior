@@ -31,12 +31,12 @@ public class DateTimeTest {
     public void test2(){
         //构造器一：Date()：创建一个对应当前时间的Date对象
         Date date1 = new Date();
-        System.out.println(date1.toString());//Sat Feb 16 16:35:31 GMT+08:00 2019
+        System.out.println(date1.toString());//Fri Jun 26 20:44:02 CST 2020
 
-        System.out.println(date1.getTime());//1550306204104
+        System.out.println(date1.getTime());//1593175442825
 
         //构造器二：创建指定毫秒数的Date对象
-        Date date2 = new Date(155030620410L);
+        Date date2 = new Date(1593175228244L);//Fri Jun 26 20:40:28 CST 2020
         System.out.println(date2.toString());
 
         //创建java.sql.Date对象
@@ -50,8 +50,6 @@ public class DateTimeTest {
         //情况二：
         Date date6 = new Date();
         java.sql.Date date7 = new java.sql.Date(date6.getTime());
-
-
     }
 
     //1.System类中的currentTimeMillis()

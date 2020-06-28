@@ -41,12 +41,12 @@ public class DateTimeTest {
         System.out.println(format);
 
         //解析：格式化的逆过程，字符串 ---> 日期
-        String str = "19-12-18 上午11:43";
+        String str = "6/26/20 9:23 PM";
         Date date1 = sdf.parse(str);
         System.out.println(date1);
 
         //*************按照指定的方式格式化和解析：调用带参的构造器*****************
-//        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyy.MMMMM.dd GGG hh:mm aaa");
+        //SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyy.MMMMM.dd GGG hh:mm aaa");
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         //格式化
         String format1 = sdf1.format(date);
@@ -55,6 +55,14 @@ public class DateTimeTest {
         //否则，抛异常
         Date date2 = sdf1.parse("2020-02-18 11:48:27");
         System.out.println(date2);
+
+        SimpleDateFormat sdf2 = new SimpleDateFormat("dd MMM yyyy");
+        String format3 = sdf2.format(date);
+        System.out.println(format3);
+
+        Date d = new Date();
+        SimpleDateFormat sdf3 = new SimpleDateFormat("今天是yyyy年MM月dd日");
+        System.out.println(sdf3.format(d));
     }
 
     /*
@@ -74,22 +82,18 @@ public class DateTimeTest {
     @Test
     public void testExer() throws ParseException {
         String birth = "2020-09-08";
-
         SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
         Date date = sdf1.parse(birth);
 //        System.out.println(date);
-
         java.sql.Date birthDate = new java.sql.Date(date.getTime());
         System.out.println(birthDate);
     }
 
-
     /*
     Calendar日历类(抽象类）的使用
-
-     */
+    */
     @Test
-    public void testCalendar(){
+    public void testCalendar() {
         //1.实例化
         //方式一：创建其子类（GregorianCalendar）的对象
         //方式二：调用其静态方法getInstance()
@@ -104,12 +108,12 @@ public class DateTimeTest {
 
         //set()
         //calendar可变性
-        calendar.set(Calendar.DAY_OF_MONTH,22);
+        calendar.set(Calendar.DAY_OF_MONTH, 22);
         days = calendar.get(Calendar.DAY_OF_MONTH);
         System.out.println(days);
 
         //add()
-        calendar.add(Calendar.DAY_OF_MONTH,-3);
+        calendar.add(Calendar.DAY_OF_MONTH, -3);
         days = calendar.get(Calendar.DAY_OF_MONTH);
         System.out.println(days);
 

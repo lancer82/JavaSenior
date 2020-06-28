@@ -93,7 +93,7 @@ public class JDK8DateTimeTest {
         System.out.println(milli);
 
         //ofEpochMilli():通过给定的毫秒数，获取Instant实例  -->Date(long millis)
-        Instant instant1 = Instant.ofEpochMilli(1550475314878L);
+        Instant instant1 = Instant.ofEpochMilli(1593260647676L);
         System.out.println(instant1);
     }
 
@@ -114,7 +114,7 @@ public class JDK8DateTimeTest {
         System.out.println(str1);//2019-02-18T15:42:18.797
 
         //解析：字符串 -->日期
-        TemporalAccessor parse = formatter.parse("2019-02-18T15:42:18.797");
+        TemporalAccessor parse = formatter.parse("2020-06-27T20:58:35.263");
         System.out.println(parse);
 
 //        方式二：
